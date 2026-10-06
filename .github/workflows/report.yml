@@ -1,0 +1,44 @@
+name: Morning report
+
+# A session dispatches this with the report text. The job opens an issue as
+# github-actions that assigns and mentions the owner, so GitHub emails it to the
+# address on their account, and closes the previous report.
+
+on:
+  workflow_dispatch:
+    inputs:
+      title:
+        description: Issue title
+        required: true
+        type: string
+      body:
+        description: Report text (Markdown)
+        required: true
+        type: string
+
+permissions:
+  issues: write
+
+concurrency:
+  group: morning-report
+  cancel-in-progress: false
+
+jobs:
+  report:
+    name: Open the report
+    runs-on: ubuntu-latest
+    steps:
+      - name: Close the previous report and open the new one
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          OWNER: ${{ github.repository_owner }}
+          TITLE: ${{ inputs.title }}
+          BODY: ${{ inputs.body }}
+        run: |
+          gh label create morning-report --color 5319e7 --description "Daily autopilot report" --force
+          for n in $(gh issue list --label morning-report --state open --json number --jq '.[].number'); do
+            gh issue close "$n" --reason completed
+          done
+          printf '%s\n\n@%s\n' "$BODY" "$OWNER" > body.md
+          gh issue create --title "$TITLE" --label morning-report --assignee "$OWNER" --body-file body.md
