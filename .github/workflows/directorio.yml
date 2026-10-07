@@ -1,0 +1,70 @@
+name: Directorio
+
+# Cada día (y a mano: Actions -> Directorio -> Run workflow, o una sesión con
+# actions_run_trigger) lee la ficha pública de cada plugin en
+# community.obsidian.md: qué versión sirve el directorio y qué dijo su revisión
+# automática. Escribe ESTADO.md y lo sube a main si cambió.
+#
+# Las sesiones de Claude no llegan a community.obsidian.md; GitHub Actions sí,
+# y la ficha no pide login. La columna «Qué hacer» dice cuándo hay que pulsar
+# Check for new releases en el dashboard, que es lo único que no se puede
+# hacer desde aquí.
+
+on:
+  schedule:
+    - cron: '17 6 * * *'
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'directory/**'
+      - '.github/workflows/directorio.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: directorio
+  cancel-in-progress: false
+
+jobs:
+  estado:
+    name: Estado en el directorio
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'pull_request' && github.sha || github.event.repository.default_branch }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - run: node --test directory/*.test.mjs
+
+      - name: Leer las fichas
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node directory/estado.mjs --write
+
+      - name: Commit a main
+        if: github.event_name != 'pull_request'
+        env:
+          RAMA: ${{ github.event.repository.default_branch }}
+        run: |
+          if [ -z "$(git status --porcelain -- ESTADO.md)" ]; then
+            echo "Sin cambios."
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add ESTADO.md
+          git commit -q -m "Directorio: $(date -u +%F)" \
+            -m 'Generado por .github/workflows/directorio.yml.'
+          for intento in 1 2 3; do
+            if git push origin "HEAD:$RAMA"; then exit 0; fi
+            git pull -q --rebase origin "$RAMA"
+          done
+          echo "::error::No se pudo subir el commit a $RAMA."
+          exit 1
