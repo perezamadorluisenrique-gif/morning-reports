@@ -17,7 +17,7 @@ import { fileURLToPath } from 'node:url';
 // Plugin repos watched, same list as tools/sync-public/sync.mjs in obsidian-dev
 // (private, so this repo carries its own copy; add a new plugin's repo here).
 export const OWNER = 'perezamadorluisenrique-gif';
-export const PLUGINS = ['shared-blocks', 'text-format', 'smart-typography-plugin', 'section-numbering', 'spreadsheet-to-table', 'hybrid-line-numbers', 'list-item-callouts', 'folder-counts', 'note-reading-time', 'task-rollover', 'zoom-into-section', 'link-title-on-paste', 'community-update-checker', 'dataview-to-bases', 'line-editing-commands', 'note-mover-rules', 'tab-history', 'url-cards', 'vim-config'].map((repo) => ({ repo }));
+export const PLUGINS = ['shared-blocks', 'text-format', 'smart-typography-plugin', 'section-numbering', 'spreadsheet-to-table', 'hybrid-line-numbers', 'list-item-callouts', 'folder-counts', 'note-reading-time', 'task-rollover', 'zoom-into-section', 'link-title-on-paste', 'community-update-checker', 'dataview-to-bases', 'line-editing-commands', 'note-mover-rules', 'tab-history', 'url-cards', 'vim-config', 'task-archive'].map((repo) => ({ repo }));
 import { passed, read, SITE } from './review.mjs';
 
 const AQUI = path.dirname(fileURLToPath(import.meta.url));
