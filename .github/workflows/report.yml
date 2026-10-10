@@ -2,7 +2,9 @@ name: Morning report
 
 # A session dispatches this with the report text. The job opens an issue as
 # github-actions that assigns and mentions the owner, so GitHub emails it to the
-# address on their account, and closes the previous report.
+# address on their account, and closes the previous report with the same label.
+# Each project passes its own label, so one project's report never closes
+# another's. Without a label it uses morning-report (the Obsidian autopilot).
 
 on:
   workflow_dispatch:
@@ -15,12 +17,17 @@ on:
         description: Report text (Markdown)
         required: true
         type: string
+      label:
+        description: Label that groups one project's reports
+        required: false
+        default: morning-report
+        type: string
 
 permissions:
   issues: write
 
 concurrency:
-  group: morning-report
+  group: morning-report-${{ inputs.label }}
   cancel-in-progress: false
 
 jobs:
@@ -35,10 +42,11 @@ jobs:
           OWNER: ${{ github.repository_owner }}
           TITLE: ${{ inputs.title }}
           BODY: ${{ inputs.body }}
+          LABEL: ${{ inputs.label || 'morning-report' }}
         run: |
-          gh label create morning-report --color 5319e7 --description "Daily autopilot report" --force
-          for n in $(gh issue list --label morning-report --state open --json number --jq '.[].number'); do
+          gh label create "$LABEL" --color 5319e7 --description "Daily autopilot report" --force
+          for n in $(gh issue list --label "$LABEL" --state open --json number --jq '.[].number'); do
             gh issue close "$n" --reason completed
           done
           printf '%s\n\n@%s\n' "$BODY" "$OWNER" > body.md
-          gh issue create --title "$TITLE" --label morning-report --assignee "$OWNER" --body-file body.md
+          gh issue create --title "$TITLE" --label "$LABEL" --assignee "$OWNER" --body-file body.md
