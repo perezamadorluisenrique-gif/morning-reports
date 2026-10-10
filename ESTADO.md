@@ -27,6 +27,7 @@ Generado por `.github/workflows/directorio.yml` con `directory/estado.mjs`. Hall
 | [Revisit Later](https://community.obsidian.md/plugins/revisit-later) | 0.1.0 | 0.1.0 | Passed | ninguno | nada |
 | [Explorer Colors Plus](https://community.obsidian.md/plugins/explorer-colors-plus) | 0.1.0 | 0.1.0 | Passed | ninguno | nada |
 | [Book Lookup](https://community.obsidian.md/plugins/book-lookup) | 0.1.0 | 0.1.0 | Passed | ninguno | nada |
+| [Web Search Menu](https://community.obsidian.md/plugins/web-search-menu) | 0.1.0 | 0.1.0 | Passed | ninguno | nada |
 
 ## Hallazgos
 
