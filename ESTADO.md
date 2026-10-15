@@ -20,7 +20,7 @@ Generado por `.github/workflows/directorio.yml` con `directory/estado.mjs`. Hall
 | [Dataview to Bases](https://community.obsidian.md/plugins/dataview-to-bases) | 0.2.0 | 0.2.0 | Passed | ninguno | nada |
 | [Line Editing Commands](https://community.obsidian.md/plugins/line-editing-commands) | 0.2.1 | 0.2.1 | Passed | ninguno | nada |
 | [Note Mover Rules](https://community.obsidian.md/plugins/note-mover-rules) | 0.2.0 | 0.2.0 | Passed | ninguno | nada |
-| [Tab History](https://community.obsidian.md/plugins/tab-history) | 0.3.1 | 0.3.0 | Satisfactory | 1 medium | el directorio sigue en 0.3.0: dashboard → … → Check for new releases |
+| [Tab History](https://community.obsidian.md/plugins/tab-history) | 0.3.1 | 0.3.1 | Satisfactory | 1 medium | nada |
 | [URL Cards](https://community.obsidian.md/plugins/url-cards) | 0.2.0 | 0.2.0 | Passed | ninguno | nada |
 | [Vim Config](https://community.obsidian.md/plugins/vim-config) | 0.1.1 | 0.1.1 | Passed | ninguno | nada |
 | [Task Archive](https://community.obsidian.md/plugins/task-archive) | 0.1.0 | 0.1.0 | Passed | ninguno | nada |
@@ -29,10 +29,11 @@ Generado por `.github/workflows/directorio.yml` con `directory/estado.mjs`. Hall
 | [Book Lookup](https://community.obsidian.md/plugins/book-lookup) | 0.1.0 | 0.1.0 | Passed | ninguno | nada |
 | [Web Search Menu](https://community.obsidian.md/plugins/web-search-menu) | 0.1.0 | 0.1.0 | Passed | ninguno | nada |
 | [Word Lookup](https://community.obsidian.md/plugins/word-lookup) | 0.1.0 | ? | ? | ninguno | nada |
-| [Quick Translate](https://community.obsidian.md/plugins/quick-translate) | 0.1.1 | 0.1.0 | Passed | ninguno | el directorio sigue en 0.1.0: dashboard → … → Check for new releases |
+| [Quick Translate](https://community.obsidian.md/plugins/quick-translate) | 0.1.1 | 0.1.1 | Passed | ninguno | nada |
+| [Claude Studio](https://community.obsidian.md/plugins/claude-studio) | 0.1.0 | ? | ? | ninguno | nada |
 
 ## Hallazgos
 
-### Tab History 0.3.0
+### Tab History 0.3.1
 
 - **medium**: This assertion is unnecessary since it does not change the type of the expression.
