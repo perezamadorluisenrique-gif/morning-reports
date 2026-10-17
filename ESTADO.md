@@ -30,22 +30,10 @@ Generado por `.github/workflows/directorio.yml` con `directory/estado.mjs`. Hall
 | [Web Search Menu](https://community.obsidian.md/plugins/web-search-menu) | 0.1.0 | 0.1.0 | Passed | ninguno | nada |
 | [Word Lookup](https://community.obsidian.md/plugins/word-lookup) | 0.1.0 | 0.1.0 | Passed | ninguno | nada |
 | [Quick Translate](https://community.obsidian.md/plugins/quick-translate) | 0.1.1 | 0.1.1 | Passed | ninguno | nada |
-| [Claude Studio](https://community.obsidian.md/plugins/claude-studio) | 0.1.3 | 0.1.3 | Satisfactory | 9 medium | nada |
+| [Claude Studio](https://community.obsidian.md/plugins/claude-studio) | 0.1.3 | 0.1.3 | Not scanned | ninguno | revisión Not scanned |
 
 ## Hallazgos
 
 ### Tab History 0.3.1
 
 - **medium**: This assertion is unnecessary since it does not change the type of the expression.
-
-### Claude Studio 0.1.3
-
-- **medium**: Unexpected duplicate "color"
-- **medium**: Unexpected duplicate "padding"
-- **medium**: Unexpected duplicate "height"
-- **medium**: Unexpected duplicate "border"
-- **medium**: Plugin reads system identity information (hostname, user info, or environment variables)
-- **medium**: **Direct Filesystem Access**: Uses the Node.js `fs` module to access the filesystem outside of the Obsidian vault API. Can read and write any file on the system.
-- **medium**: **Shell Execution**: Executes shell commands via `child_process`. Gives the plugin full control over the system.
-- **medium**: Unexpected duplicate "text-align"
-- **medium**: Unexpected duplicate "background"
