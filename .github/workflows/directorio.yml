@@ -91,7 +91,13 @@ jobs:
           if [ -z "$ultimo" ]; then ultimo=never; horas=999; else
             horas=$(( ( $(date -u +%s) - $(date -u -d "$ultimo" +%s) ) / 3600 )); fi
           echo "Último informe: $ultimo (hace $horas h)."
-          if [ "$horas" -le 26 ]; then exit 0; fi
+          if [ "$horas" -le 26 ]; then
+            # Vuelve a haber informe: se cierra el aviso, o el siguiente silencio no abriría otro.
+            for n in $(gh issue list --label autopilot-silent --state open --json number --jq '.[].number'); do
+              gh issue close "$n" --comment "A Morning report arrived ($ultimo); closing automatically."
+            done
+            exit 0
+          fi
           gh label create autopilot-silent --color d93f0b --description "No morning report in over 26 h" --force
           if [ -n "$(gh issue list --label autopilot-silent --state open --json number --jq '.[].number')" ]; then
             echo "Ya hay un aviso abierto."; exit 0
