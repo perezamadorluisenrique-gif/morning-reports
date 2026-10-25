@@ -68,3 +68,33 @@ jobs:
           done
           echo "::error::No se pudo subir el commit a $RAMA."
           exit 1
+
+  # Vigía independiente de las rutinas: si el autopilot deja de mandar el
+  # informe, nadie corre status.mjs y nadie se entera (pasó del 15 al 25 de
+  # octubre de 2026). Este job corre cada día con el cron de arriba y abre un
+  # issue asignado al dueño cuando el último "Morning report" tiene más de 26 h.
+  vigia:
+    name: Vigía del informe diario
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Abrir un aviso si no hay informe en 26 h
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          OWNER: ${{ github.repository_owner }}
+        run: |
+          ultimo=$(gh issue list --label morning-report --state all --limit 1 --json createdAt --jq '.[0].createdAt // empty')
+          # Sin ninguno (etiqueta cambiada o nunca enviado) también es silencio.
+          if [ -z "$ultimo" ]; then ultimo=never; horas=999; else
+            horas=$(( ( $(date -u +%s) - $(date -u -d "$ultimo" +%s) ) / 3600 )); fi
+          echo "Último informe: $ultimo (hace $horas h)."
+          if [ "$horas" -le 26 ]; then exit 0; fi
+          gh label create autopilot-silent --color d93f0b --description "No morning report in over 26 h" --force
+          if [ -n "$(gh issue list --label autopilot-silent --state open --json number --jq '.[].number')" ]; then
+            echo "Ya hay un aviso abierto."; exit 0
+          fi
+          printf 'The last Morning report issue was opened %s (%s h ago). The autopilot routines may be disabled or failing: check them in the project, then close this issue.\n\n@%s\n' "$ultimo" "$horas" "$OWNER" > body.md
+          gh issue create --title "Autopilot silent: no Morning report since ${ultimo%%T*}" --label autopilot-silent --assignee "$OWNER" --body-file body.md
