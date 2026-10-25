@@ -32,6 +32,7 @@ Generado por `.github/workflows/directorio.yml` con `directory/estado.mjs`. Hall
 | [Quick Translate](https://community.obsidian.md/plugins/quick-translate) | 0.1.1 | 0.1.1 | Passed | ninguno | nada |
 | [Dice Rolls](https://community.obsidian.md/plugins/dice-rolls) | 0.1.1 | 0.1.1 | Satisfactory | 1 medium | nada |
 | [Claude Studio](https://community.obsidian.md/plugins/claude-studio) | 0.1.4 | 0.1.4 | Satisfactory | 3 medium | nada |
+| [Book Studio](https://community.obsidian.md/plugins/book-studio) | 0.1.2 | 0.1.2 | Satisfactory | 6 medium | nada |
 
 ## Hallazgos
 
@@ -48,3 +49,12 @@ Generado por `.github/workflows/directorio.yml` con `directory/estado.mjs`. Hall
 - **medium**: Plugin reads system identity information (hostname, user info, or environment variables)
 - **medium**: **Direct Filesystem Access**: Uses the Node.js `fs` module to access the filesystem outside of the Obsidian vault API. Can read and write any file on the system.
 - **medium**: **Shell Execution**: Executes shell commands via `child_process`. Gives the plugin full control over the system.
+
+### Book Studio 0.1.2
+
+- **medium**: Unexpected use of 'fetch'. Use the built-in `requestUrl` function instead of `fetch` for network requests in Obsidian.
+- **medium**: Unexpected use of 'localStorage'. Prefer `App#saveLocalStorage` / `App#loadLocalStorage` functions to write / read localStorage data that's unique to a vault.
+- **medium**: This PluginSettingTab does not implement getSettingDefinitions(); its settings will not appear in Obsidian's settings search for users on 1.13.0 or later. Consider adopting the declarative settings API.
+- **medium**: Uses `document.createElement` instead of Obsidian's `createEl` helpers
+- **medium**: Do not import Node.js built-in module "node:fs". Node.js APIs are not available on mobile. Use a dynamic import() or require() guarded by Platform.isDesktop instead.
+- **medium**: Do not import Node.js built-in module "node:path". Node.js APIs are not available on mobile. Use a dynamic import() or require() guarded by Platform.isDesktop instead.
