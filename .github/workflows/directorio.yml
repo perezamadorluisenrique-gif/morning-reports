@@ -87,8 +87,9 @@ jobs:
           OWNER: ${{ github.repository_owner }}
         run: |
           ultimo=$(gh issue list --label morning-report --state all --limit 1 --json createdAt --jq '.[0].createdAt // empty')
-          if [ -z "$ultimo" ]; then echo "Sin informes todavía."; exit 0; fi
-          horas=$(( ( $(date -u +%s) - $(date -u -d "$ultimo" +%s) ) / 3600 ))
+          # Sin ninguno (etiqueta cambiada o nunca enviado) también es silencio.
+          if [ -z "$ultimo" ]; then ultimo=never; horas=999; else
+            horas=$(( ( $(date -u +%s) - $(date -u -d "$ultimo" +%s) ) / 3600 )); fi
           echo "Último informe: $ultimo (hace $horas h)."
           if [ "$horas" -le 26 ]; then exit 0; fi
           gh label create autopilot-silent --color d93f0b --description "No morning report in over 26 h" --force
