@@ -25,14 +25,14 @@ Generado por `.github/workflows/directorio.yml` con `directory/estado.mjs`. Hall
 | [Vim Config](https://community.obsidian.md/plugins/vim-config) | 0.1.1 | 0.1.1 | Passed | ninguno | nada |
 | [Task Archive](https://community.obsidian.md/plugins/task-archive) | 0.1.0 | 0.1.0 | Passed | ninguno | nada |
 | [Revisit Later](https://community.obsidian.md/plugins/revisit-later) | 0.1.0 | 0.1.0 | Passed | ninguno | nada |
-| [Explorer Colors Plus](https://community.obsidian.md/plugins/explorer-colors-plus) | 0.1.1 | 0.1.1 | Passed | ninguno | nada |
+| [Explorer Colors Plus](https://community.obsidian.md/plugins/explorer-colors-plus) | 0.1.2 | 0.1.2 | Passed | ninguno | nada |
 | [Book Lookup](https://community.obsidian.md/plugins/book-lookup) | 0.1.0 | 0.1.0 | Passed | ninguno | nada |
 | [Web Search Menu](https://community.obsidian.md/plugins/web-search-menu) | 0.1.0 | 0.1.0 | Passed | ninguno | nada |
 | [Word Lookup](https://community.obsidian.md/plugins/word-lookup) | 0.1.0 | 0.1.0 | Passed | ninguno | nada |
 | [Quick Translate](https://community.obsidian.md/plugins/quick-translate) | 0.1.1 | 0.1.1 | Passed | ninguno | nada |
 | [Dice Rolls](https://community.obsidian.md/plugins/dice-rolls) | 0.1.1 | 0.1.1 | Satisfactory | 1 medium | nada |
 | [Claude Studio](https://community.obsidian.md/plugins/claude-studio) | 0.1.4 | 0.1.4 | Satisfactory | 3 medium | nada |
-| [Book Studio](https://community.obsidian.md/plugins/book-studio) | 0.1.2 | 0.1.2 | Satisfactory | 6 medium | nada |
+| [Book Studio](https://community.obsidian.md/plugins/book-studio) | 0.1.3 | 0.1.3 | Satisfactory | 4 medium | nada |
 
 ## Hallazgos
 
@@ -50,11 +50,9 @@ Generado por `.github/workflows/directorio.yml` con `directory/estado.mjs`. Hall
 - **medium**: **Direct Filesystem Access**: Uses the Node.js `fs` module to access the filesystem outside of the Obsidian vault API. Can read and write any file on the system.
 - **medium**: **Shell Execution**: Executes shell commands via `child_process`. Gives the plugin full control over the system.
 
-### Book Studio 0.1.2
+### Book Studio 0.1.3
 
 - **medium**: Unexpected use of 'fetch'. Use the built-in `requestUrl` function instead of `fetch` for network requests in Obsidian.
 - **medium**: Unexpected use of 'localStorage'. Prefer `App#saveLocalStorage` / `App#loadLocalStorage` functions to write / read localStorage data that's unique to a vault.
-- **medium**: This PluginSettingTab does not implement getSettingDefinitions(); its settings will not appear in Obsidian's settings search for users on 1.13.0 or later. Consider adopting the declarative settings API.
-- **medium**: Uses `document.createElement` instead of Obsidian's `createEl` helpers
 - **medium**: Do not import Node.js built-in module "node:fs". Node.js APIs are not available on mobile. Use a dynamic import() or require() guarded by Platform.isDesktop instead.
 - **medium**: Do not import Node.js built-in module "node:path". Node.js APIs are not available on mobile. Use a dynamic import() or require() guarded by Platform.isDesktop instead.
