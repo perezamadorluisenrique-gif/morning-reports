@@ -8,7 +8,7 @@ Generated 2026-10-28 by `.github/workflows/wp-stats.yml` from api.wordpress.org.
 |---|---|---|---|---|---|---|---|
 | child-theme-maker | not listed | | | | | | |
 | open-access-toolbar | not listed | | | | | | |
-| native-link-health | not listed | | | | | | |
+| linkvane | not listed | | | | | | |
 
 ## Support topics in the last 7 days
 
