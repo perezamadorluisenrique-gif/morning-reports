@@ -30,9 +30,10 @@ Generado por `.github/workflows/directorio.yml` con `directory/estado.mjs`. Hall
 | [Web Search Menu](https://community.obsidian.md/plugins/web-search-menu) | 0.1.0 | 0.1.0 | Passed | ninguno | nada |
 | [Word Lookup](https://community.obsidian.md/plugins/word-lookup) | 0.1.0 | 0.1.0 | Passed | ninguno | nada |
 | [Quick Translate](https://community.obsidian.md/plugins/quick-translate) | 0.1.1 | 0.1.1 | Passed | ninguno | nada |
-| [Dice Rolls](https://community.obsidian.md/plugins/dice-rolls) | 0.1.1 | 0.1.1 | Satisfactory | 1 medium | nada |
+| [Dice Rolls](https://community.obsidian.md/plugins/dice-rolls) | 0.2.0 | 0.2.0 | Satisfactory | 1 medium | nada |
 | [Claude Studio](https://community.obsidian.md/plugins/claude-studio) | 0.1.4 | 0.1.4 | Satisfactory | 3 medium | nada |
 | [Book Studio](https://community.obsidian.md/plugins/book-studio) | 0.1.3 | 0.1.3 | Satisfactory | 4 medium | nada |
+| [Inline TOC](https://community.obsidian.md/plugins/inline-toc) | 0.1.0 | ? | ? | ninguno | nada |
 
 ## Hallazgos
 
@@ -40,7 +41,7 @@ Generado por `.github/workflows/directorio.yml` con `directory/estado.mjs`. Hall
 
 - **medium**: This assertion is unnecessary since it does not change the type of the expression.
 
-### Dice Rolls 0.1.1
+### Dice Rolls 0.2.0
 
 - **medium**: Unexpected browser feature "text-decoration" is only partially supported by Obsidian 1.4.5
 
