@@ -10,13 +10,13 @@ Generado por `.github/workflows/directorio.yml` con `directory/estado.mjs`. Hall
 | [Section Numbering](https://community.obsidian.md/plugins/section-numbering) | 0.8.2 | 0.8.2 | Passed | ninguno | nada |
 | [Spreadsheet to Table](https://community.obsidian.md/plugins/spreadsheet-to-table) | 0.5.2 | 0.5.2 | Passed | ninguno | nada |
 | [Hybrid Line Numbers](https://community.obsidian.md/plugins/hybrid-line-numbers) | 0.3.0 | 0.3.0 | Passed | ninguno | nada |
-| [List Item Callouts](https://community.obsidian.md/plugins/list-item-callouts) | 0.3.2 | 0.3.2 | Passed | ninguno | nada |
+| [List Item Callouts](https://community.obsidian.md/plugins/list-item-callouts) | 0.4.0 | 0.3.2 | Passed | ninguno | el directorio sigue en 0.3.2: dashboard → … → Check for new releases |
 | [Folder Counts](https://community.obsidian.md/plugins/folder-counts) | 0.3.0 | 0.3.0 | Passed | ninguno | nada |
 | [Note Reading Time](https://community.obsidian.md/plugins/note-reading-time) | 0.2.0 | 0.2.0 | Passed | ninguno | nada |
 | [Task Rollover](https://community.obsidian.md/plugins/task-rollover) | 0.2.1 | 0.2.1 | Passed | ninguno | nada |
 | [Zoom Into Section](https://community.obsidian.md/plugins/zoom-into-section) | 0.2.0 | 0.2.0 | Passed | ninguno | nada |
 | [Link Title on Paste](https://community.obsidian.md/plugins/link-title-on-paste) | 0.2.0 | 0.2.0 | Passed | ninguno | nada |
-| [Update Radar](https://community.obsidian.md/plugins/update-radar) | 0.3.0 | 0.3.0 | Passed | ninguno | nada |
+| [Update Radar](https://community.obsidian.md/plugins/update-radar) | 0.4.0 | 0.3.0 | Passed | ninguno | el directorio sigue en 0.3.0: dashboard → … → Check for new releases |
 | [Dataview to Bases](https://community.obsidian.md/plugins/dataview-to-bases) | 0.2.0 | 0.2.0 | Passed | ninguno | nada |
 | [Line Editing Commands](https://community.obsidian.md/plugins/line-editing-commands) | 0.2.1 | 0.2.1 | Passed | ninguno | nada |
 | [Note Mover Rules](https://community.obsidian.md/plugins/note-mover-rules) | 0.2.0 | 0.2.0 | Passed | ninguno | nada |
@@ -34,6 +34,7 @@ Generado por `.github/workflows/directorio.yml` con `directory/estado.mjs`. Hall
 | [Claude Studio](https://community.obsidian.md/plugins/claude-studio) | 0.1.4 | 0.1.4 | Satisfactory | 3 medium | nada |
 | [Book Studio](https://community.obsidian.md/plugins/book-studio) | 0.1.3 | 0.1.3 | Satisfactory | 4 medium | nada |
 | [Inline TOC](https://community.obsidian.md/plugins/inline-toc) | 0.1.0 | ? | ? | ninguno | nada |
+| [Emoji Search](https://community.obsidian.md/plugins/emoji-search) | 0.1.0 | ? | ? | ninguno | nada |
 
 ## Hallazgos
 
