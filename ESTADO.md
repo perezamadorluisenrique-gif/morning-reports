@@ -7,16 +7,16 @@ Generado por `.github/workflows/directorio.yml` con `directory/estado.mjs`. Hall
 | [Shared Blocks](https://community.obsidian.md/plugins/shared-blocks) | 0.6.0 | 0.6.0 | Passed | ninguno | nada |
 | [Text Case and Cleanup](https://community.obsidian.md/plugins/text-format) | 0.7.1 | 0.7.1 | Passed | ninguno | nada |
 | [Typography as You Type](https://community.obsidian.md/plugins/typography-as-you-type) | 0.7.2 | 0.7.2 | Passed | ninguno | nada |
-| [Section Numbering](https://community.obsidian.md/plugins/section-numbering) | 0.8.2 | 0.8.2 | Passed | ninguno | nada |
+| [Section Numbering](https://community.obsidian.md/plugins/section-numbering) | 0.10.0 | 0.8.2 | Passed | ninguno | el directorio sigue en 0.8.2: dashboard → … → Check for new releases |
 | [Spreadsheet to Table](https://community.obsidian.md/plugins/spreadsheet-to-table) | 0.5.2 | 0.5.2 | Passed | ninguno | nada |
 | [Hybrid Line Numbers](https://community.obsidian.md/plugins/hybrid-line-numbers) | 0.3.0 | 0.3.0 | Passed | ninguno | nada |
-| [List Item Callouts](https://community.obsidian.md/plugins/list-item-callouts) | 0.4.0 | 0.3.2 | Passed | ninguno | el directorio sigue en 0.3.2: dashboard → … → Check for new releases |
+| [List Item Callouts](https://community.obsidian.md/plugins/list-item-callouts) | 0.4.0 | 0.4.0 | Passed | ninguno | nada |
 | [Folder Counts](https://community.obsidian.md/plugins/folder-counts) | 0.3.0 | 0.3.0 | Passed | ninguno | nada |
 | [Note Reading Time](https://community.obsidian.md/plugins/note-reading-time) | 0.2.0 | 0.2.0 | Passed | ninguno | nada |
 | [Task Rollover](https://community.obsidian.md/plugins/task-rollover) | 0.2.1 | 0.2.1 | Passed | ninguno | nada |
 | [Zoom Into Section](https://community.obsidian.md/plugins/zoom-into-section) | 0.2.0 | 0.2.0 | Passed | ninguno | nada |
 | [Link Title on Paste](https://community.obsidian.md/plugins/link-title-on-paste) | 0.2.0 | 0.2.0 | Passed | ninguno | nada |
-| [Update Radar](https://community.obsidian.md/plugins/update-radar) | 0.4.0 | 0.3.0 | Passed | ninguno | el directorio sigue en 0.3.0: dashboard → … → Check for new releases |
+| [Update Radar](https://community.obsidian.md/plugins/update-radar) | 0.4.0 | 0.4.0 | Passed | ninguno | nada |
 | [Dataview to Bases](https://community.obsidian.md/plugins/dataview-to-bases) | 0.2.0 | 0.2.0 | Passed | ninguno | nada |
 | [Line Editing Commands](https://community.obsidian.md/plugins/line-editing-commands) | 0.2.1 | 0.2.1 | Passed | ninguno | nada |
 | [Note Mover Rules](https://community.obsidian.md/plugins/note-mover-rules) | 0.2.0 | 0.2.0 | Passed | ninguno | nada |
