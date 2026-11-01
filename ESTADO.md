@@ -7,7 +7,7 @@ Generado por `.github/workflows/directorio.yml` con `directory/estado.mjs`. Hall
 | [Shared Blocks](https://community.obsidian.md/plugins/shared-blocks) | 0.6.0 | 0.6.0 | Passed | ninguno | nada |
 | [Text Case and Cleanup](https://community.obsidian.md/plugins/text-format) | 0.7.1 | 0.7.1 | Passed | ninguno | nada |
 | [Typography as You Type](https://community.obsidian.md/plugins/typography-as-you-type) | 0.7.2 | 0.7.2 | Passed | ninguno | nada |
-| [Section Numbering](https://community.obsidian.md/plugins/section-numbering) | 0.10.0 | 0.8.2 | Passed | ninguno | el directorio sigue en 0.8.2: dashboard → … → Check for new releases |
+| [Section Numbering](https://community.obsidian.md/plugins/section-numbering) | 0.10.0 | 0.10.0 | Passed | ninguno | nada |
 | [Spreadsheet to Table](https://community.obsidian.md/plugins/spreadsheet-to-table) | 0.5.2 | 0.5.2 | Passed | ninguno | nada |
 | [Hybrid Line Numbers](https://community.obsidian.md/plugins/hybrid-line-numbers) | 0.3.0 | 0.3.0 | Passed | ninguno | nada |
 | [List Item Callouts](https://community.obsidian.md/plugins/list-item-callouts) | 0.4.0 | 0.4.0 | Passed | ninguno | nada |
@@ -33,8 +33,8 @@ Generado por `.github/workflows/directorio.yml` con `directory/estado.mjs`. Hall
 | [Dice Rolls](https://community.obsidian.md/plugins/dice-rolls) | 0.2.0 | 0.2.0 | Satisfactory | 1 medium | nada |
 | [Claude Studio](https://community.obsidian.md/plugins/claude-studio) | 0.1.4 | 0.1.4 | Satisfactory | 3 medium | nada |
 | [Book Studio](https://community.obsidian.md/plugins/book-studio) | 0.1.3 | 0.1.3 | Satisfactory | 4 medium | nada |
-| [Inline TOC](https://community.obsidian.md/plugins/inline-toc) | 0.1.0 | ? | ? | ninguno | nada |
-| [Emoji Search](https://community.obsidian.md/plugins/emoji-search) | 0.1.0 | ? | ? | ninguno | nada |
+| [Inline TOC](https://community.obsidian.md/plugins/inline-toc) | 0.1.0 | 0.1.0 | Passed | ninguno | nada |
+| [Emoji Search](https://community.obsidian.md/plugins/emoji-search) | 0.1.0 | 0.1.0 | Satisfactory | 2 medium | nada |
 
 ## Hallazgos
 
@@ -58,3 +58,8 @@ Generado por `.github/workflows/directorio.yml` con `directory/estado.mjs`. Hall
 - **medium**: Unexpected use of 'localStorage'. Prefer `App#saveLocalStorage` / `App#loadLocalStorage` functions to write / read localStorage data that's unique to a vault.
 - **medium**: Do not import Node.js built-in module "node:fs". Node.js APIs are not available on mobile. Use a dynamic import() or require() guarded by Platform.isDesktop instead.
 - **medium**: Do not import Node.js built-in module "node:path". Node.js APIs are not available on mobile. Use a dynamic import() or require() guarded by Platform.isDesktop instead.
+
+### Emoji Search 0.1.0
+
+- **medium**: This PluginSettingTab does not implement getSettingDefinitions(); its settings will not appear in Obsidian's settings search for users on 1.13.0 or later. Consider adopting the declarative settings API.
+- **medium**: Unexpected browser feature "css-clip-path" is only partially supported by Obsidian 1.7.4
