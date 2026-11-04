@@ -1,14 +1,14 @@
 # WordPress plugins on wordpress.org
 
-Generated 2026-11-03 by `.github/workflows/wp-stats.yml` from api.wordpress.org. Active installs are wordpress.org's rounded buckets. "not listed" covers never submitted, pending review and rejected.
+Generated 2026-11-04 by `.github/workflows/wp-stats.yml` from api.wordpress.org. Active installs are wordpress.org's rounded buckets. "not listed" covers never submitted, pending review and rejected.
 
-**Total active installs: 0** across 0 live plugins.
+**Total active installs: 0** across 1 live plugin.
 
 | Plugin | State | Version | Active installs | Downloads | Updated | Rating | Open threads |
 |---|---|---|---|---|---|---|---|
 | child-theme-maker | not listed | | | | | | |
 | open-access-toolbar | not listed | | | | | | |
-| linkvane | not listed | | | | | | |
+| [linkvane](https://wordpress.org/plugins/linkvane/) | live | 1.7.3 | 0 | 0 | 2026-11-04 | none | 0 |
 
 ## Support topics in the last 7 days
 
