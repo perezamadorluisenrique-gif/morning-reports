@@ -92,7 +92,12 @@ async function main(args) {
 	const detalles = [];
 	let algo = false;
 	for (const p of PLUGINS) {
-		const datos = await uno(p);
+		// A repo not public yet (404) is skipped, never fatal.
+		const datos = await uno(p).catch((err) => (/: 404$/.test(err.message) ? null : Promise.reject(err)));
+		if (!datos) {
+			console.error(`${p.repo}: not public yet, skipped`);
+			continue;
+		}
 		if (accion(datos)) algo = true;
 		filas.push(fila(datos));
 		detalles.push(...detalle(datos));
