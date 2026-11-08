@@ -17,7 +17,7 @@ import { fileURLToPath } from 'node:url';
 // Plugin repos watched, same list as tools/sync-public/sync.mjs in obsidian-dev
 // (private, so this repo carries its own copy; add a new plugin's repo here).
 export const OWNER = 'perezamadorluisenrique-gif';
-export const PLUGINS = ['shared-blocks', 'text-format', 'smart-typography-plugin', 'section-numbering', 'spreadsheet-to-table', 'hybrid-line-numbers', 'list-item-callouts', 'folder-counts', 'note-reading-time', 'task-rollover', 'zoom-into-section', 'link-title-on-paste', 'community-update-checker', 'dataview-to-bases', 'line-editing-commands', 'note-mover-rules', 'tab-history', 'url-cards', 'vim-config', 'task-archive', 'revisit-later', 'explorer-colors-plus', 'book-lookup', 'web-search-menu', 'word-lookup', 'quick-translate', 'dice-rolls', 'claude-studio', 'book-studio', 'inline-toc', 'emoji-search'].map((repo) => ({ repo }));
+export const PLUGINS = ['shared-blocks', 'text-format', 'smart-typography-plugin', 'section-numbering', 'spreadsheet-to-table', 'hybrid-line-numbers', 'list-item-callouts', 'folder-counts', 'note-reading-time', 'task-rollover', 'zoom-into-section', 'link-title-on-paste', 'community-update-checker', 'dataview-to-bases', 'line-editing-commands', 'note-mover-rules', 'tab-history', 'url-cards', 'vim-config', 'task-archive', 'revisit-later', 'explorer-colors-plus', 'book-lookup', 'web-search-menu', 'word-lookup', 'quick-translate', 'dice-rolls', 'claude-studio', 'book-studio', 'inline-toc', 'emoji-search', 'random-note-filters', 'run-code-blocks', 'canvas-finder', 'folder-index-notes'].map((repo) => ({ repo }));
 import { passed, read, SITE } from './review.mjs';
 
 const AQUI = path.dirname(fileURLToPath(import.meta.url));
@@ -92,7 +92,12 @@ async function main(args) {
 	const detalles = [];
 	let algo = false;
 	for (const p of PLUGINS) {
-		const datos = await uno(p);
+		// A repo not public yet (404) is skipped, never fatal.
+		const datos = await uno(p).catch((err) => (/: 404$/.test(err.message) ? null : Promise.reject(err)));
+		if (!datos) {
+			console.error(`${p.repo}: not public yet, skipped`);
+			continue;
+		}
 		if (accion(datos)) algo = true;
 		filas.push(fila(datos));
 		detalles.push(...detalle(datos));
