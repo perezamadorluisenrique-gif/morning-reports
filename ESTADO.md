@@ -36,6 +36,9 @@ Generado por `.github/workflows/directorio.yml` con `directory/estado.mjs`. Hall
 | [Inline TOC](https://community.obsidian.md/plugins/inline-toc) | 0.1.0 | 0.1.0 | Passed | ninguno | nada |
 | [Emoji Search](https://community.obsidian.md/plugins/emoji-search) | 0.1.0 | 0.1.0 | Satisfactory | 2 medium | nada |
 | [Random Note Filters](https://community.obsidian.md/plugins/random-note-filters) | 0.1.0 | 0.1.0 | Passed | ninguno | nada |
+| [Run Code Blocks](https://community.obsidian.md/plugins/run-code-blocks) | 0.1.0 | 0.1.0 | Satisfactory | 4 medium | nada |
+| [Canvas Finder](https://community.obsidian.md/plugins/canvas-finder) | 0.1.0 | 0.1.0 | Passed | ninguno | nada |
+| [Folder Index Notes](https://community.obsidian.md/plugins/folder-index-notes) | 0.1.0 | 0.1.0 | Satisfactory | 1 medium | nada |
 
 ## Hallazgos
 
@@ -64,3 +67,14 @@ Generado por `.github/workflows/directorio.yml` con `directory/estado.mjs`. Hall
 
 - **medium**: This PluginSettingTab does not implement getSettingDefinitions(); its settings will not appear in Obsidian's settings search for users on 1.13.0 or later. Consider adopting the declarative settings API.
 - **medium**: Unexpected browser feature "css-clip-path" is only partially supported by Obsidian 1.7.4
+
+### Run Code Blocks 0.1.0
+
+- **medium**: **Direct Filesystem Access**: Uses the Node.js `fs` module to access the filesystem outside of the Obsidian vault API. Can read and write any file on the system.
+- **medium**: **Shell Execution**: Executes shell commands via `child_process`. Gives the plugin full control over the system.
+- **medium**: This PluginSettingTab does not implement getSettingDefinitions(); its settings will not appear in Obsidian's settings search for users on 1.13.0 or later. Consider adopting the declarative settings API.
+- **medium**: Avoid using 'globalThis'. Use 'window' or 'activeWindow' for popout window compatibility.
+
+### Folder Index Notes 0.1.0
+
+- **medium**: This PluginSettingTab does not implement getSettingDefinitions(); its settings will not appear in Obsidian's settings search for users on 1.13.0 or later. Consider adopting the declarative settings API.
