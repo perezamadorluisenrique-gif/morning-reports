@@ -25,14 +25,14 @@ Generado por `.github/workflows/directorio.yml` con `directory/estado.mjs`. Hall
 | [Vim Config](https://community.obsidian.md/plugins/vim-config) | 0.1.1 | 0.1.1 | Passed | ninguno | nada |
 | [Task Archive](https://community.obsidian.md/plugins/task-archive) | 0.1.0 | 0.1.0 | Passed | ninguno | nada |
 | [Revisit Later](https://community.obsidian.md/plugins/revisit-later) | 0.1.0 | 0.1.0 | Passed | ninguno | nada |
-| [Explorer Colors Plus](https://community.obsidian.md/plugins/explorer-colors-plus) | 0.1.2 | 0.1.2 | Passed | ninguno | nada |
+| [Explorer Colors Plus](https://community.obsidian.md/plugins/explorer-colors-plus) | 0.1.2 | ? | ? | ninguno | nada |
 | [Book Lookup](https://community.obsidian.md/plugins/book-lookup) | 0.1.0 | 0.1.0 | Passed | ninguno | nada |
 | [Web Search Menu](https://community.obsidian.md/plugins/web-search-menu) | 0.1.0 | 0.1.0 | Passed | ninguno | nada |
 | [Word Lookup](https://community.obsidian.md/plugins/word-lookup) | 0.1.0 | 0.1.0 | Passed | ninguno | nada |
 | [Quick Translate](https://community.obsidian.md/plugins/quick-translate) | 0.1.1 | 0.1.1 | Passed | ninguno | nada |
-| [Dice Rolls](https://community.obsidian.md/plugins/dice-rolls) | 0.2.0 | 0.2.0 | Satisfactory | 1 medium | nada |
+| [Dice Rolls](https://community.obsidian.md/plugins/dice-rolls) | 0.2.0 | ? | ? | ninguno | nada |
 | [Claude Studio](https://community.obsidian.md/plugins/claude-studio) | 0.1.4 | 0.1.4 | Satisfactory | 3 medium | nada |
-| [Book Studio](https://community.obsidian.md/plugins/book-studio) | 0.1.3 | 0.1.3 | Satisfactory | 4 medium | nada |
+| [Book Studio](https://community.obsidian.md/plugins/book-studio) | 0.2.0 | 0.2.0 | Caution | 20 medium | revisión Caution: medium, Uses `document.createElement` instead of Obsidian's `createEl` helpers |
 | [Inline TOC](https://community.obsidian.md/plugins/inline-toc) | 0.1.0 | 0.1.0 | Passed | ninguno | nada |
 | [Emoji Search](https://community.obsidian.md/plugins/emoji-search) | 0.1.0 | 0.1.0 | Satisfactory | 2 medium | nada |
 | [Random Note Filters](https://community.obsidian.md/plugins/random-note-filters) | 0.1.0 | 0.1.0 | Passed | ninguno | nada |
@@ -46,22 +46,34 @@ Generado por `.github/workflows/directorio.yml` con `directory/estado.mjs`. Hall
 
 - **medium**: This assertion is unnecessary since it does not change the type of the expression.
 
-### Dice Rolls 0.2.0
-
-- **medium**: Unexpected browser feature "text-decoration" is only partially supported by Obsidian 1.4.5
-
 ### Claude Studio 0.1.4
 
 - **medium**: Plugin reads system identity information (hostname, user info, or environment variables)
 - **medium**: **Direct Filesystem Access**: Uses the Node.js `fs` module to access the filesystem outside of the Obsidian vault API. Can read and write any file on the system.
 - **medium**: **Shell Execution**: Executes shell commands via `child_process`. Gives the plugin full control over the system.
 
-### Book Studio 0.1.3
+### Book Studio 0.2.0
 
+- **medium**: Uses `document.createElement` instead of Obsidian's `createEl` helpers
 - **medium**: Unexpected use of 'fetch'. Use the built-in `requestUrl` function instead of `fetch` for network requests in Obsidian.
-- **medium**: Unexpected use of 'localStorage'. Prefer `App#saveLocalStorage` / `App#loadLocalStorage` functions to write / read localStorage data that's unique to a vault.
-- **medium**: Do not import Node.js built-in module "node:fs". Node.js APIs are not available on mobile. Use a dynamic import() or require() guarded by Platform.isDesktop instead.
 - **medium**: Do not import Node.js built-in module "node:path". Node.js APIs are not available on mobile. Use a dynamic import() or require() guarded by Platform.isDesktop instead.
+- **medium**: Do not import Node.js built-in module "node:fs". Node.js APIs are not available on mobile. Use a dynamic import() or require() guarded by Platform.isDesktop instead.
+- **medium**: Do not import Node.js built-in module "node:fs/promises". Node.js APIs are not available on mobile. Use a dynamic import() or require() guarded by Platform.isDesktop instead.
+- **medium**: Do not import Node.js built-in module "node:child_process". Node.js APIs are not available on mobile. Use a dynamic import() or require() guarded by Platform.isDesktop instead.
+- **medium**: Do not import Node.js built-in module "node:os". Node.js APIs are not available on mobile. Use a dynamic import() or require() guarded by Platform.isDesktop instead.
+- **medium**: Unexpected use of 'localStorage'. Prefer `App#saveLocalStorage` / `App#loadLocalStorage` functions to write / read localStorage data that's unique to a vault.
+- **medium**: Avoid :has — it can cause significant performance issues due to broad selector invalidation.
+- **medium**: Do not import Node.js built-in module "node:http". Node.js APIs are not available on mobile. Use a dynamic import() or require() guarded by Platform.isDesktop instead.
+- **medium**: Do not import Node.js built-in module "node:zlib". Node.js APIs are not available on mobile. Use a dynamic import() or require() guarded by Platform.isDesktop instead.
+- **medium**: Use 'window.setTimeout()' instead of 'setTimeout()' for popout window compatibility.
+- **medium**: Use '.instanceOf(HTMLInputElement)' instead of 'instanceof HTMLInputElement' for cross-window safe type checking.
+- **medium**: Use '.instanceOf(HTMLTextAreaElement)' instead of 'instanceof HTMLTextAreaElement' for cross-window safe type checking.
+- **medium**: Use '.instanceOf(HTMLSelectElement)' instead of 'instanceof HTMLSelectElement' for cross-window safe type checking.
+- **medium**: Do not import Node.js built-in module "node:url". Node.js APIs are not available on mobile. Use a dynamic import() or require() guarded by Platform.isDesktop instead.
+- **medium**: Unexpected browser feature "css-clip-path" is only partially supported by Obsidian 1.6.5
+- **medium**: Avoid !important — override styles by increasing selector specificity or using CSS variables instead.
+- **medium**: Unexpected browser feature "text-decoration" is only partially supported by Obsidian 1.6.5
+- **medium**: Unexpected browser feature "extended-system-fonts" is not supported by Obsidian 1.6.5
 
 ### Emoji Search 0.1.0
 
