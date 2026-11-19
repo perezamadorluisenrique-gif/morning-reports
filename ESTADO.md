@@ -5,9 +5,9 @@ Generado por `.github/workflows/directorio.yml` con `directory/estado.mjs`. Hall
 | Plugin | Release en GitHub | Directorio | Revisión | Hallazgos | Qué hacer |
 |---|---|---|---|---|---|
 | [Shared Blocks](https://community.obsidian.md/plugins/shared-blocks) | 0.6.0 | 0.6.0 | Passed | ninguno | nada |
-| [Text Case and Cleanup](https://community.obsidian.md/plugins/text-format) | 0.8.0 | 0.7.2 | Passed | ninguno | el directorio sigue en 0.7.2: dashboard → … → Check for new releases |
-| [Typography as You Type](https://community.obsidian.md/plugins/typography-as-you-type) | 0.9.0 | 0.8.0 | Passed | ninguno | el directorio sigue en 0.8.0: dashboard → … → Check for new releases |
-| [Section Numbering](https://community.obsidian.md/plugins/section-numbering) | 0.10.1 | 0.10.1 | Passed | ninguno | nada |
+| [Text Case and Cleanup](https://community.obsidian.md/plugins/text-format) | 0.8.0 | 0.8.0 | Passed | ninguno | nada |
+| [Typography as You Type](https://community.obsidian.md/plugins/typography-as-you-type) | 0.9.0 | 0.9.0 | Passed | ninguno | nada |
+| [Section Numbering](https://community.obsidian.md/plugins/section-numbering) | 0.11.0 | 0.10.1 | Passed | ninguno | el directorio sigue en 0.10.1: dashboard → … → Check for new releases |
 | [Spreadsheet to Table](https://community.obsidian.md/plugins/spreadsheet-to-table) | 0.5.3 | 0.5.3 | Passed | ninguno | nada |
 | [Hybrid Line Numbers](https://community.obsidian.md/plugins/hybrid-line-numbers) | 0.3.0 | 0.3.0 | Passed | ninguno | nada |
 | [List Item Callouts](https://community.obsidian.md/plugins/list-item-callouts) | 0.4.1 | 0.4.1 | Passed | ninguno | nada |
@@ -16,7 +16,7 @@ Generado por `.github/workflows/directorio.yml` con `directory/estado.mjs`. Hall
 | [Task Rollover](https://community.obsidian.md/plugins/task-rollover) | 0.2.1 | 0.2.1 | Passed | ninguno | nada |
 | [Zoom Into Section](https://community.obsidian.md/plugins/zoom-into-section) | 0.2.0 | 0.2.0 | Passed | ninguno | nada |
 | [Link Title on Paste](https://community.obsidian.md/plugins/link-title-on-paste) | 0.2.0 | 0.2.0 | Passed | ninguno | nada |
-| [Update Radar](https://community.obsidian.md/plugins/update-radar) | 0.7.0 | 0.6.0 | Passed | ninguno | el directorio sigue en 0.6.0: dashboard → … → Check for new releases |
+| [Update Radar](https://community.obsidian.md/plugins/update-radar) | 0.7.0 | 0.7.0 | Passed | ninguno | nada |
 | [Dataview to Bases](https://community.obsidian.md/plugins/dataview-to-bases) | 0.3.0 | 0.3.0 | Passed | ninguno | nada |
 | [Line Editing Commands](https://community.obsidian.md/plugins/line-editing-commands) | 0.2.1 | 0.2.1 | Passed | ninguno | nada |
 | [Note Mover Rules](https://community.obsidian.md/plugins/note-mover-rules) | 0.2.0 | 0.2.0 | Passed | ninguno | nada |
@@ -32,7 +32,7 @@ Generado por `.github/workflows/directorio.yml` con `directory/estado.mjs`. Hall
 | [Quick Translate](https://community.obsidian.md/plugins/quick-translate) | 0.1.1 | 0.1.1 | Passed | ninguno | nada |
 | [Dice Rolls](https://community.obsidian.md/plugins/dice-rolls) | 0.2.0 | 0.2.0 | Satisfactory | 1 medium | nada |
 | [Claude Studio](https://community.obsidian.md/plugins/claude-studio) | 0.1.4 | 0.1.4 | Satisfactory | 3 medium | nada |
-| [Book Studio](https://community.obsidian.md/plugins/book-studio) | 0.2.0 | 0.2.0 | Caution | 20 medium | revisión Caution: medium, Uses `document.createElement` instead of Obsidian's `createEl` helpers |
+| [Book Studio](https://community.obsidian.md/plugins/book-studio) | 0.3.0 | 0.3.0 | Caution | 20 medium | revisión Caution: medium, Uses `document.createElement` instead of Obsidian's `createEl` helpers |
 | [Inline TOC](https://community.obsidian.md/plugins/inline-toc) | 0.1.0 | 0.1.0 | Passed | ninguno | nada |
 | [Emoji Search](https://community.obsidian.md/plugins/emoji-search) | 0.1.0 | 0.1.0 | Satisfactory | 2 medium | nada |
 | [Random Note Filters](https://community.obsidian.md/plugins/random-note-filters) | 0.1.0 | 0.1.0 | Passed | ninguno | nada |
@@ -56,7 +56,7 @@ Generado por `.github/workflows/directorio.yml` con `directory/estado.mjs`. Hall
 - **medium**: **Direct Filesystem Access**: Uses the Node.js `fs` module to access the filesystem outside of the Obsidian vault API. Can read and write any file on the system.
 - **medium**: **Shell Execution**: Executes shell commands via `child_process`. Gives the plugin full control over the system.
 
-### Book Studio 0.2.0
+### Book Studio 0.3.0
 
 - **medium**: Uses `document.createElement` instead of Obsidian's `createEl` helpers
 - **medium**: Unexpected use of 'fetch'. Use the built-in `requestUrl` function instead of `fetch` for network requests in Obsidian.
