@@ -7,7 +7,7 @@ Generado por `.github/workflows/directorio.yml` con `directory/estado.mjs`. Hall
 | [Shared Blocks](https://community.obsidian.md/plugins/shared-blocks) | 0.6.0 | 0.6.0 | Passed | ninguno | nada |
 | [Text Case and Cleanup](https://community.obsidian.md/plugins/text-format) | 0.8.0 | 0.8.0 | Passed | ninguno | nada |
 | [Typography as You Type](https://community.obsidian.md/plugins/typography-as-you-type) | 0.9.0 | 0.9.0 | Passed | ninguno | nada |
-| [Section Numbering](https://community.obsidian.md/plugins/section-numbering) | 0.11.0 | 0.10.1 | Passed | ninguno | el directorio sigue en 0.10.1: dashboard → … → Check for new releases |
+| [Section Numbering](https://community.obsidian.md/plugins/section-numbering) | 0.11.0 | 0.11.0 | Passed | ninguno | nada |
 | [Spreadsheet to Table](https://community.obsidian.md/plugins/spreadsheet-to-table) | 0.5.3 | 0.5.3 | Passed | ninguno | nada |
 | [Hybrid Line Numbers](https://community.obsidian.md/plugins/hybrid-line-numbers) | 0.3.0 | 0.3.0 | Passed | ninguno | nada |
 | [List Item Callouts](https://community.obsidian.md/plugins/list-item-callouts) | 0.4.1 | 0.4.1 | Passed | ninguno | nada |
